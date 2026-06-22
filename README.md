@@ -1,4 +1,4 @@
-StepStyle
+## StepStyle
 
 StepStyle is a complete and responsive shoes e-commerce platform designed for customers to browse, search, purchase, and manage footwear products online. 
 It also provides an admin panel for managing products, inventory, customers, orders, categories, brands, and discount coupons.
