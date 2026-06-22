@@ -1,0 +1,705 @@
+/* =========================================================
+   STEPSTYLE ADMIN USER DETAILS
+   ========================================================= */
+
+.admin-page {
+    background: #f5f6f8;
+}
+
+/* =========================================================
+   BACK LINK
+   ========================================================= */
+
+.admin-back-link {
+    display: inline-flex;
+    margin-bottom: 18px;
+    align-items: center;
+    gap: 8px;
+
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.admin-back-link:hover {
+    color: #ff6b00;
+    transform: translateX(-2px);
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.admin-page .page-header {
+    display: flex;
+    margin-bottom: 26px;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.admin-page .page-header h1 {
+    margin: 0;
+    color: #111827;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.admin-page .page-header p {
+    margin: 8px 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* =========================================================
+   ACCOUNT STATUS BADGES
+   ========================================================= */
+
+.user-status-deleted,
+.stock-low,
+.stock-good {
+    display: inline-flex;
+    min-height: 38px;
+    padding: 9px 14px;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.user-status-deleted {
+    border: 1px solid #d1d5db;
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.stock-low {
+    border: 1px solid #fecaca;
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.stock-good {
+    border: 1px solid #bbf7d0;
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+/* =========================================================
+   USER OVERVIEW
+   ========================================================= */
+
+.user-details-overview {
+    display: grid;
+    margin-bottom: 26px;
+    grid-template-columns: minmax(320px, 1.6fr) repeat(2, minmax(190px, 1fr));
+    gap: 18px;
+}
+
+/* =========================================================
+   PROFILE CARD
+   ========================================================= */
+
+.admin-user-profile-card {
+    display: flex;
+    min-height: 150px;
+    padding: 24px;
+    align-items: center;
+    gap: 18px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    background: #ffffff;
+
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+}
+
+.admin-user-avatar {
+    display: grid;
+    width: 82px;
+    height: 82px;
+    flex: 0 0 82px;
+    place-items: center;
+
+    overflow: hidden;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b00, #ff9a4d);
+    color: #ffffff;
+
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.admin-user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-user-primary-info {
+    min-width: 0;
+}
+
+.admin-user-primary-info h2 {
+    margin: 0 0 7px;
+    color: #111827;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.admin-user-primary-info p {
+    overflow: hidden;
+    margin: 0 0 12px;
+    color: #6b7280;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-user-primary-info .status-badge {
+    display: inline-flex;
+    padding: 7px 11px;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+.admin-user-stat-card {
+    display: flex;
+    min-height: 150px;
+    padding: 22px;
+    align-items: center;
+    gap: 16px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    background: #ffffff;
+
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+}
+
+.admin-user-stat-card > i {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    place-items: center;
+
+    border-radius: 13px;
+    background: #fff3e8;
+    color: #ff6b00;
+
+    font-size: 20px;
+}
+
+.admin-user-stat-card div {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+}
+
+.admin-user-stat-card span {
+    margin-bottom: 6px;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.admin-user-stat-card strong {
+    color: #111827;
+    font-size: 23px;
+    font-weight: 800;
+    word-break: break-word;
+}
+/* =========================================================
+   PERSONAL INFORMATION CARD
+   ========================================================= */
+
+.user-information-card,
+.user-orders-card {
+    margin-bottom: 26px;
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    background: #ffffff;
+
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+}
+
+.user-information-heading {
+    display: flex;
+    padding: 20px 24px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.user-information-heading h2 {
+    margin: 0;
+    color: #111827;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.user-information-heading > span {
+    display: inline-flex;
+    min-height: 32px;
+    padding: 7px 11px;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+    background: #fff3e8;
+    color: #ff6b00;
+
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   PERSONAL INFORMATION GRID
+   ========================================================= */
+
+.user-information-grid {
+    display: grid;
+    padding: 24px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.user-information-item {
+    display: flex;
+    min-height: 92px;
+    padding: 17px;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #f9fafb;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.user-information-item:hover {
+    border-color: #ffb27d;
+    background: #fffaf6;
+    transform: translateY(-1px);
+}
+
+.user-information-item > span {
+    margin-bottom: 7px;
+    color: #6b7280;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.user-information-item > strong {
+    color: #111827;
+    font-size: 14px;
+    font-weight: 750;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.user-address-item {
+    grid-column: span 2;
+}
+
+/* =========================================================
+   RECENT ORDERS TABLE
+   ========================================================= */
+
+.user-orders-table-wrapper {
+    width: 100%;
+    margin: 0;
+    overflow-x: auto;
+
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.user-orders-table-wrapper .admin-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+}
+
+.user-orders-table-wrapper .admin-table th {
+    padding: 14px 18px;
+
+    border-bottom: 1px solid #e5e7eb;
+    background: #111827;
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.user-orders-table-wrapper .admin-table td {
+    padding: 16px 18px;
+
+    border-bottom: 1px solid #edf0f3;
+    color: #374151;
+
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.user-orders-table-wrapper .admin-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.user-orders-table-wrapper .admin-table tbody tr:hover {
+    background: #fffaf6;
+}
+
+.user-orders-table-wrapper .admin-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.user-orders-table-wrapper .admin-table td strong {
+    color: #111827;
+    font-weight: 800;
+}
+
+/* =========================================================
+   ORDER STATUS BADGES
+   ========================================================= */
+
+.user-orders-table-wrapper .status-badge,
+.user-orders-table-wrapper .stock-good,
+.user-orders-table-wrapper .stock-low {
+    display: inline-flex;
+    min-height: 30px;
+    padding: 6px 10px;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.user-orders-table-wrapper .status-badge {
+    border: 1px solid #bfdbfe;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.user-orders-table-wrapper .stock-good {
+    border: 1px solid #bbf7d0;
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.user-orders-table-wrapper .stock-low {
+    border: 1px solid #fecaca;
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+/* =========================================================
+   EMPTY ORDERS STATE
+   ========================================================= */
+
+.admin-user-orders-empty {
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.admin-user-orders-empty i {
+    display: block;
+    margin-bottom: 13px;
+    color: #ff6b00;
+    font-size: 40px;
+}
+
+.admin-user-orders-empty p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+/* =========================================================
+   TABLE SCROLLBAR
+   ========================================================= */
+
+.user-orders-table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.user-orders-table-wrapper::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
+
+.user-orders-table-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: #cbd5e1;
+}
+
+.user-orders-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.admin-body.dark .admin-page {
+    background: #090909;
+}
+
+body.admin-body.dark .admin-back-link {
+    color: #d1d5db;
+}
+
+body.admin-body.dark .admin-back-link:hover {
+    color: #ff6b00;
+}
+
+body.admin-body.dark .admin-page .page-header h1,
+body.admin-body.dark .admin-user-primary-info h2,
+body.admin-body.dark .admin-user-stat-card strong,
+body.admin-body.dark .user-information-heading h2,
+body.admin-body.dark .user-information-item > strong,
+body.admin-body.dark .user-orders-table-wrapper .admin-table td strong,
+body.admin-body.dark .admin-user-orders-empty strong {
+    color: #ffffff !important;
+}
+
+body.admin-body.dark .admin-page .page-header p,
+body.admin-body.dark .admin-user-primary-info p,
+body.admin-body.dark .admin-user-stat-card span,
+body.admin-body.dark .user-information-item > span,
+body.admin-body.dark .admin-user-orders-empty p {
+    color: #9ca3af !important;
+}
+
+/* Main cards */
+
+body.admin-body.dark .admin-user-profile-card,
+body.admin-body.dark .admin-user-stat-card,
+body.admin-body.dark .user-information-card,
+body.admin-body.dark .user-orders-card {
+    border-color: #303030;
+    background: #171717;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+/* Information heading */
+
+body.admin-body.dark .user-information-heading {
+    border-bottom-color: #303030;
+}
+
+/* Personal information boxes */
+
+body.admin-body.dark .user-information-item {
+    border-color: #3a3a3a;
+    background: #202020;
+}
+
+body.admin-body.dark .user-information-item:hover {
+    border-color: #ff6b00;
+    background: #251b15;
+}
+
+/* Role badge */
+
+body.admin-body.dark .admin-user-primary-info .status-badge {
+    background: rgba(37, 99, 235, 0.16);
+    color: #93c5fd;
+}
+
+/* Header badges */
+
+body.admin-body.dark .user-information-heading > span {
+    background: rgba(255, 107, 0, 0.14);
+    color: #ff9a4d;
+}
+
+body.admin-body.dark .user-status-deleted {
+    border-color: #4b5563;
+    background: #303030;
+    color: #d1d5db;
+}
+
+body.admin-body.dark .stock-good {
+    border-color: rgba(34, 197, 94, 0.35);
+    background: rgba(34, 197, 94, 0.14);
+    color: #86efac;
+}
+
+body.admin-body.dark .stock-low {
+    border-color: rgba(239, 68, 68, 0.35);
+    background: rgba(239, 68, 68, 0.14);
+    color: #fca5a5;
+}
+
+/* Recent orders table */
+
+body.admin-body.dark .user-orders-table-wrapper,
+body.admin-body.dark .user-orders-table-wrapper .admin-table {
+    background: #171717;
+}
+
+body.admin-body.dark .user-orders-table-wrapper .admin-table th {
+    border-color: #353535;
+    background: #202020;
+    color: #ffffff;
+}
+
+body.admin-body.dark .user-orders-table-wrapper .admin-table tbody,
+body.admin-body.dark .user-orders-table-wrapper .admin-table tbody tr,
+body.admin-body.dark .user-orders-table-wrapper .admin-table tbody tr:nth-child(odd),
+body.admin-body.dark .user-orders-table-wrapper .admin-table tbody tr:nth-child(even) {
+    background: #171717;
+}
+
+body.admin-body.dark .user-orders-table-wrapper .admin-table td {
+    border-color: #353535;
+    background: transparent;
+    color: #d1d5db;
+}
+
+body.admin-body.dark .user-orders-table-wrapper .admin-table tbody tr:hover {
+    background: #251b15;
+}
+
+/* Order badges */
+
+body.admin-body.dark .user-orders-table-wrapper .status-badge {
+    border-color: rgba(59, 130, 246, 0.35);
+    background: rgba(59, 130, 246, 0.14);
+    color: #93c5fd;
+}
+
+body.admin-body.dark .user-orders-table-wrapper .stock-good {
+    border-color: rgba(34, 197, 94, 0.35);
+    background: rgba(34, 197, 94, 0.14);
+    color: #86efac;
+}
+
+body.admin-body.dark .user-orders-table-wrapper .stock-low {
+    border-color: rgba(239, 68, 68, 0.35);
+    background: rgba(239, 68, 68, 0.14);
+    color: #fca5a5;
+}
+
+/* Dark scrollbar */
+
+body.admin-body.dark .user-orders-table-wrapper::-webkit-scrollbar-track {
+    background: #171717;
+}
+
+body.admin-body.dark .user-orders-table-wrapper::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 1150px) {
+    .user-details-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-user-profile-card {
+        grid-column: span 2;
+    }
+
+    .user-information-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+    .admin-page .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .user-information-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .user-address-item {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-page .page-header h1 {
+        font-size: 26px;
+    }
+
+    .user-details-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-user-profile-card {
+        grid-column: auto;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-user-stat-card {
+        min-height: 110px;
+    }
+
+    .user-information-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .user-information-grid {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    .user-address-item {
+        grid-column: auto;
+    }
+
+    .admin-user-primary-info p {
+        white-space: normal;
+        word-break: break-word;
+    }
+}

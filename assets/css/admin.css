@@ -1,0 +1,1842 @@
+/* =========================================================
+   STEPSTYLE ADMIN - GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body.admin-body {
+    min-height: 100vh;
+    margin: 0;
+    background: #f4f6fb;
+    color: #111827;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+.admin-layout {
+    display: block;
+    min-height: 100vh;
+    background: #f4f6fb;
+}
+
+/* =========================================================
+   ADMIN SIDEBAR
+   ========================================================= */
+
+.admin-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    width: 270px;
+    min-height: 100vh;
+    padding: 22px 16px;
+    overflow-y: auto;
+    flex-direction: column;
+    background: #111827;
+    color: #ffffff;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 22px;
+    padding: 8px 10px 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-logo > i {
+    display: grid;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 12px;
+    background: #ff6b00;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.sidebar-logo div {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+}
+
+.sidebar-logo strong {
+    color: #ffffff;
+    font-size: 19px;
+}
+
+.sidebar-logo span {
+    margin-top: 3px;
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+.sidebar-admin-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-admin-avatar {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 50%;
+    background: #ff6b00;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.sidebar-admin-info > div:last-child {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+}
+
+.sidebar-admin-info strong {
+    overflow: hidden;
+    color: #ffffff;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-admin-info span {
+    margin-top: 3px;
+    color: #9ca3af;
+    font-size: 11px;
+}
+.sidebar-menu {
+    display: grid;
+    gap: 7px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: #d1d5db;
+    font-size: 14px;
+    font-weight: 600;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-menu a i {
+    width: 20px;
+    color: #9ca3af;
+    text-align: center;
+}
+
+.sidebar-menu a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+.sidebar-menu a:hover i {
+    color: #ff6b00;
+}
+
+.sidebar-menu a.active {
+    background: #ff6b00;
+    color: #ffffff;
+}
+
+.sidebar-menu a.active i {
+    color: #ffffff;
+}
+
+.sidebar-footer {
+    display: grid;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-footer a {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 14px;
+    border-radius: 9px;
+    color: #d1d5db;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sidebar-footer a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.sidebar-footer .sidebar-logout {
+    color: #fca5a5;
+}
+
+.sidebar-footer .sidebar-logout:hover {
+    background: rgba(220, 38, 38, 0.16);
+    color: #ffffff;
+}
+
+/* =========================================================
+   ADMIN PAGE CONTENT
+   ========================================================= */
+
+.admin-page {
+    width: calc(100% - 270px);
+    min-height: 100vh;
+    margin-left: 270px;
+    padding: 34px;
+    background: #f4f6fb;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.page-header h1 {
+    margin: 0 0 7px;
+    color: #111827;
+    font-size: 32px;
+}
+
+.page-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.admin-cards {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+    );
+    gap: 20px;
+}
+
+.admin-card {
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.admin-card > i {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 18px;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(255, 107, 0, 0.12);
+    color: #ff6b00;
+    font-size: 20px;
+}
+
+.admin-card h3 {
+    margin: 0 0 8px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.admin-card h2 {
+    margin: 0;
+    color: #111827;
+    font-size: 30px;
+}
+/* =========================================================
+FORMS AND FILTERS
+========================================================= */
+
+.form-card {
+padding: 26px;
+border: 1px solid #e5e7eb;
+border-radius: 16px;
+background: #ffffff;
+box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.form-grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 20px;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 8px;
+color: #374151;
+font-size: 14px;
+font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.admin-filter-form input,
+.admin-filter-form select {
+width: 100%;
+padding: 13px 14px;
+border: 1px solid #d1d5db;
+border-radius: 10px;
+outline: none;
+background: #ffffff;
+color: #111827;
+font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.admin-filter-form input:focus,
+.admin-filter-form select:focus {
+border-color: #ff6b00;
+box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.12);
+}
+
+.form-group textarea {
+min-height: 130px;
+resize: vertical;
+}
+
+.admin-filter-form {
+display: grid;
+grid-template-columns:
+minmax(240px, 1fr)
+170px
+170px
+auto
+auto;
+align-items: center;
+gap: 12px;
+}
+
+/* =========================================================
+TABLES
+========================================================= */
+
+.table-card {
+width: 100%;
+overflow-x: auto;
+border: 1px solid #e5e7eb;
+border-radius: 16px;
+background: #ffffff;
+box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.admin-table {
+width: 100%;
+min-width: 950px;
+border-collapse: collapse;
+}
+
+.admin-table th {
+padding: 15px;
+background: #111827;
+color: #ffffff;
+font-size: 13px;
+text-align: left;
+white-space: nowrap;
+}
+
+.admin-table td {
+padding: 15px;
+border-bottom: 1px solid #e5e7eb;
+color: #374151;
+font-size: 14px;
+vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+background: #f9fafb;
+}
+
+.admin-table tbody tr:last-child td {
+border-bottom: 0;
+}
+
+.admin-table td strong {
+display: block;
+color: #111827;
+}
+
+.admin-table td small {
+display: block;
+margin-top: 4px;
+color: #6b7280;
+}
+/* =========================================================
+BUTTONS, BADGES AND ALERTS
+========================================================= */
+
+.save-btn,
+.btn-edit,
+.btn-delete,
+.btn-view {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 7px;
+padding: 9px 14px;
+border: 0;
+border-radius: 8px;
+color: #ffffff;
+font-size: 13px;
+font-weight: 700;
+cursor: pointer;
+text-decoration: none;
+}
+
+.save-btn {
+padding: 13px 22px;
+background: #ff6b00;
+}
+
+.btn-edit {
+background: #16a34a;
+}
+
+.btn-delete {
+background: #dc2626;
+}
+
+.btn-view {
+background: #2563eb;
+}
+
+.save-btn:hover {
+background: #e85f00;
+}
+
+.btn-edit:hover {
+background: #15803d;
+}
+
+.btn-delete:hover {
+background: #b91c1c;
+}
+
+.btn-view:hover {
+background: #1d4ed8;
+}
+
+.stock-good,
+.stock-low,
+.status-badge,
+.user-status-deleted {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 6px 11px;
+border-radius: 999px;
+font-size: 12px;
+font-weight: 700;
+white-space: nowrap;
+}
+
+.stock-good {
+background: #dcfce7;
+color: #166534;
+}
+
+.stock-low {
+background: #fee2e2;
+color: #b91c1c;
+}
+
+.status-badge {
+background: #dbeafe;
+color: #1d4ed8;
+}
+
+.user-status-deleted {
+background: #e5e7eb;
+color: #4b5563;
+}
+
+.admin-success-message,
+.admin-error-message {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 22px;
+padding: 14px 16px;
+border-radius: 10px;
+font-size: 14px;
+font-weight: 600;
+}
+
+.admin-success-message {
+border: 1px solid #86efac;
+background: #dcfce7;
+color: #166534;
+}
+
+.admin-error-message {
+border: 1px solid #fca5a5;
+background: #fee2e2;
+color: #b91c1c;
+}
+
+.admin-user-actions {
+display: flex;
+align-items: center;
+gap: 8px;
+white-space: nowrap;
+}
+
+.admin-no-action {
+color: #9ca3af;
+font-size: 12px;
+font-weight: 600;
+}
+
+.admin-empty-row {
+padding: 35px !important;
+color: #6b7280;
+text-align: center !important;
+}
+
+.product-thumb {
+width: 60px;
+height: 60px;
+object-fit: cover;
+border-radius: 10px;
+}
+
+.custom-file-upload {
+display: inline-flex;
+align-items: center;
+gap: 9px;
+width: fit-content;
+padding: 12px 18px;
+border-radius: 10px;
+background: #111827;
+color: #ffffff;
+font-weight: 700;
+cursor: pointer;
+}
+
+.custom-file-upload:hover {
+background: #ff6b00;
+}
+
+#fileName {
+display: block;
+margin-top: 10px;
+color: #6b7280;
+font-size: 13px;
+}
+
+/* =========================================================
+ADMIN LOGIN AND REGISTER
+========================================================= */
+
+.admin-login-page {
+min-height: 100vh;
+margin: 0;
+background:
+radial-gradient(
+circle at top left,
+rgba(255, 107, 0, 0.18),
+transparent 35%
+),
+linear-gradient(135deg, #090909, #181818);
+color: #ffffff;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin-login-wrapper {
+display: grid;
+min-height: 100vh;
+padding: 30px 18px;
+place-items: center;
+}
+
+.admin-login-card {
+width: 100%;
+max-width: 470px;
+padding: 38px;
+border: 1px solid rgba(255, 255, 255, 0.12);
+border-radius: 22px;
+background: rgba(20, 20, 20, 0.94);
+box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+.admin-login-heading {
+margin-bottom: 28px;
+text-align: center;
+}
+
+.admin-login-logo {
+display: grid;
+width: 68px;
+height: 68px;
+margin: 0 auto 17px;
+place-items: center;
+border-radius: 18px;
+background: #ff6b00;
+font-size: 27px;
+}
+
+.admin-login-heading h1 {
+margin: 0 0 8px;
+color: #ffffff;
+font-size: 30px;
+}
+
+.admin-login-heading p {
+margin: 0;
+color: #aaaaaa;
+}
+
+.admin-login-field {
+margin-bottom: 20px;
+}
+
+.admin-login-field label {
+display: block;
+margin-bottom: 8px;
+color: #ffffff;
+font-size: 14px;
+font-weight: 700;
+}
+
+.admin-login-input {
+position: relative;
+}
+
+.admin-login-input > i {
+position: absolute;
+top: 50%;
+left: 16px;
+color: #888888;
+transform: translateY(-50%);
+pointer-events: none;
+}
+
+.admin-login-input input {
+width: 100%;
+padding: 14px 48px 14px 46px;
+border: 1px solid rgba(255, 255, 255, 0.15);
+border-radius: 11px;
+outline: none;
+background: rgba(255, 255, 255, 0.06);
+color: #ffffff;
+font-size: 14px;
+}
+
+.admin-login-input input::placeholder {
+color: #777777;
+}
+
+.admin-login-input input:focus {
+border-color: #ff6b00;
+box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.14);
+}
+
+.admin-password-toggle {
+position: absolute;
+top: 50%;
+right: 12px;
+display: grid;
+width: 34px;
+height: 34px;
+place-items: center;
+border: 0;
+background: transparent;
+color: #999999;
+cursor: pointer;
+transform: translateY(-50%);
+}
+
+.admin-password-toggle:hover {
+color: #ff6b00;
+}
+
+.admin-login-button,
+.admin-register-link {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 9px;
+width: 100%;
+padding: 14px 18px;
+border-radius: 11px;
+font-size: 15px;
+font-weight: 800;
+}
+
+.admin-login-button {
+border: 0;
+background: #ff6b00;
+color: #ffffff;
+cursor: pointer;
+}
+
+.admin-login-button:hover {
+background: #e85f00;
+}
+
+.admin-register-link {
+border: 1px solid #ff6b00;
+background: transparent;
+color: #ff6b00;
+text-decoration: none;
+}
+
+.admin-register-link:hover {
+background: #ff6b00;
+color: #ffffff;
+}
+
+.admin-auth-actions {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 12px;
+}
+
+.admin-login-footer {
+margin-top: 24px;
+padding-top: 20px;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+text-align: center;
+}
+
+.admin-login-footer a {
+color: #bbbbbb;
+font-weight: 700;
+text-decoration: none;
+}
+
+.admin-login-footer a:hover {
+color: #ff6b00;
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+.admin-sidebar {
+position: relative;
+width: 100%;
+min-height: auto;
+}
+}
+
+.admin-page {
+    width: 100%;
+    margin-left: 0;
+    padding: 24px;
+}
+
+.admin-layout {
+    display: block;
+}
+
+.form-grid,
+.admin-filter-form {
+    grid-template-columns: 1fr;
+}
+
+.admin-user-actions {
+    align-items: stretch;
+    flex-direction: column;
+}
+
+@media (max-width: 520px) {
+.admin-login-card {
+padding: 27px 21px;
+}
+
+
+.admin-auth-actions {
+    grid-template-columns: 1fr;
+}
+
+.page-header {
+    align-items: flex-start;
+    flex-direction: column;
+}
+}
+:root {
+    --admin-sidebar-width: 270px;
+}
+
+.admin-layout {
+    display: block !important;
+    width: 100%;
+    min-height: 100vh;
+    padding-left: var(--admin-sidebar-width);
+    background: #f4f6fb;
+}
+
+.admin-sidebar {
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: var(--admin-sidebar-width) !important;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.admin-layout > .admin-page {
+    width: 100% !important;
+    min-width: 0;
+    min-height: 100vh;
+    margin-left: 0 !important;
+    padding: 34px !important;
+    background: #f4f6fb;
+}
+
+/* Compact sidebar for smaller screens */
+
+@media (max-width: 850px) {
+    :root {
+        --admin-sidebar-width: 88px;
+    }
+
+    .admin-layout {
+        padding-left: var(--admin-sidebar-width) !important;
+    }
+
+    .admin-sidebar {
+        position: fixed !important;
+        width: var(--admin-sidebar-width) !important;
+        min-height: 100vh !important;
+    }
+
+    .sidebar-logo {
+        justify-content: center;
+        padding: 8px 0 20px;
+    }
+
+    .sidebar-logo div,
+    .sidebar-admin-info > div:last-child,
+    .sidebar-menu a span,
+    .sidebar-footer a span {
+        display: none;
+    }
+
+    .sidebar-admin-info {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .sidebar-menu a,
+    .sidebar-footer a {
+        justify-content: center;
+        padding: 13px 10px;
+    }
+
+    .sidebar-menu a i,
+    .sidebar-footer a i {
+        width: auto;
+        font-size: 18px;
+    }
+
+    .admin-layout > .admin-page {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 24px !important;
+    }
+}
+
+@media (max-width: 520px) {
+    :root {
+        --admin-sidebar-width: 76px;
+    }
+
+    .admin-layout > .admin-page {
+        padding: 18px !important;
+    }
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+}
+/* =========================================================
+   ORDER VIEW DETAILS BUTTON
+   ========================================================= */
+
+.order-actions-cell {
+    min-width: 145px;
+    text-align: center;
+}
+
+.order-view-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 14px;
+    border-radius: 9px;
+    background: #111827;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.order-view-button:hover {
+    background: #ff6b00;
+    color: #ffffff;
+    box-shadow: 0 7px 16px rgba(255, 107, 0, 0.22);
+    transform: translateY(-1px);
+}
+
+.order-view-button:active {
+    transform: translateY(0);
+}
+/* =========================================================
+/* =========================================================
+   SIDEBAR LOGO AND THEME BUTTON
+   Theme button stays directly beside StepStyle
+   ========================================================= */
+
+.sidebar-logo {
+    display: flex;
+    width: 100%;
+    padding: 20px 12px 24px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Orange StepStyle icon */
+
+.sidebar-brand-icon {
+    display: grid;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 15px;
+    place-items: center;
+    border-radius: 15px;
+    background: #ff6b00;
+    color: #ffffff;
+    font-size: 23px;
+}
+
+/* Contains title row and Admin Panel text */
+
+.sidebar-brand-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* StepStyle and theme button on the same line */
+
+.sidebar-brand-title-row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.sidebar-brand-title-row strong {
+    margin: 0;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 31px;
+    white-space: nowrap;
+}
+
+/* Admin Panel text */
+
+.sidebar-brand-content > span {
+    margin-top: 5px;
+    color: #9ca3af;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Sun and moon theme button */
+
+.sidebar-brand-theme-button {
+    display: grid;
+    width: 31px;
+    height: 31px;
+    flex: 0 0 31px;
+    margin: 0;
+    padding: 0;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-brand-theme-button:hover {
+    border-color: #ff6b00;
+    background: #ff6b00;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.sidebar-brand-theme-button:active {
+    transform: translateY(0);
+}
+
+.sidebar-brand-theme-button:focus-visible {
+    outline: 2px solid #ff6b00;
+    outline-offset: 3px;
+}
+
+/* Keep title and button beside each other on smaller screens */
+
+@media (max-width: 850px) {
+    .sidebar-logo {
+        padding: 18px 8px 22px;
+    }
+
+    .sidebar-brand-title-row {
+        flex-direction: row;
+    }
+
+    .sidebar-brand-title-row strong {
+        font-size: 18px;
+    }
+
+    .sidebar-brand-theme-button {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+    }
+}
+
+/* =========================================================
+   ADMIN SIDEBAR FIXED LAYOUT
+   ========================================================= */
+
+html,
+body {
+    min-height: 100%;
+}
+
+body.admin-body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.admin-layout {
+    min-height: 100vh;
+}
+
+/* Fixed sidebar */
+
+.admin-sidebar {
+    position: fixed !important;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex !important;
+    width: 260px !important;
+    height: 100vh !important;
+    padding: 0 20px 22px;
+    flex-direction: column;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    background: #111827;
+    color: #ffffff;
+}
+
+/* Main page beside sidebar */
+
+.admin-page {
+    width: calc(100% - 260px) !important;
+    min-height: 100vh;
+    margin-left: 260px !important;
+    padding: 30px !important;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   SIDEBAR BRAND
+   ========================================================= */
+
+.sidebar-logo {
+    display: flex !important;
+    width: 100%;
+    padding: 28px 0 24px;
+    align-items: center !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-brand-icon {
+    display: grid;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 14px;
+    place-items: center;
+
+    border-radius: 15px;
+    background: #ff6b00;
+    color: #ffffff;
+    font-size: 23px;
+}
+
+.sidebar-brand-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar-brand-title-row {
+    display: flex !important;
+    width: 100%;
+    align-items: center !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 8px;
+}
+
+.sidebar-brand-title-row strong {
+    margin: 0;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 31px;
+    white-space: nowrap;
+}
+
+.sidebar-brand-content > span {
+    margin-top: 5px;
+    color: #9ca3af;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Theme button directly beside StepStyle */
+
+.sidebar-brand-theme-button {
+    display: grid !important;
+    width: 31px !important;
+    height: 31px !important;
+    min-width: 31px;
+    flex: 0 0 31px;
+    margin: 0 !important;
+    padding: 0 !important;
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-brand-theme-button i {
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+    color: inherit !important;
+    font-size: 14px;
+}
+
+.sidebar-brand-theme-button:hover {
+    border-color: #ff6b00;
+    background: #ff6b00;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.sidebar-brand-theme-button:active {
+    transform: translateY(0);
+}
+
+.sidebar-brand-theme-button:focus-visible {
+    outline: 2px solid #ff6b00;
+    outline-offset: 3px;
+}
+/* =========================================================
+   SIDEBAR NAVIGATION
+   ========================================================= */
+
+.admin-sidebar,
+.admin-sidebar * {
+    box-sizing: border-box;
+}
+
+.sidebar-nav {
+    display: flex !important;
+    width: 100%;
+    padding: 18px 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-nav a,
+.sidebar-footer a {
+    display: flex !important;
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 14px;
+    align-items: center;
+    gap: 12px;
+
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: #d1d5db;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.sidebar-nav a i,
+.sidebar-footer a i {
+    display: inline-flex !important;
+    width: 20px !important;
+    min-width: 20px;
+    height: 20px;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent !important;
+    color: #9ca3af !important;
+
+    font-size: 15px;
+    text-align: center;
+}
+
+.sidebar-nav a span,
+.sidebar-footer a span {
+    display: inline-block !important;
+    overflow: hidden;
+    color: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active,
+.sidebar-footer a:hover {
+    background: rgba(255, 107, 0, 0.13);
+    color: #ffffff;
+}
+
+.sidebar-nav a:hover i,
+.sidebar-nav a.active i,
+.sidebar-footer a:hover i {
+    color: #ff6b00 !important;
+}
+
+.sidebar-nav a.active {
+    box-shadow: inset 3px 0 0 #ff6b00;
+}
+
+/* =========================================================
+   SIDEBAR FOOTER
+   ========================================================= */
+
+.sidebar-footer {
+    display: flex !important;
+    width: 100%;
+    padding-top: 16px;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 6px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-footer .sidebar-logout {
+    color: #fca5a5;
+}
+
+.sidebar-footer .sidebar-logout:hover {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ffffff;
+}
+
+.sidebar-footer .sidebar-logout:hover i {
+    color: #ef4444 !important;
+}
+
+/* =========================================================
+   SIDEBAR SCROLLBAR
+   ========================================================= */
+
+.admin-sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.admin-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================================
+   ADMIN PAGE SCROLL FIX
+   ========================================================= */
+
+.admin-layout {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.admin-page {
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+body.admin-body {
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* =========================================================
+   RESPONSIVE SIDEBAR
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .admin-sidebar {
+        width: 220px !important;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .admin-page {
+        width: calc(100% - 220px) !important;
+        margin-left: 220px !important;
+        padding: 24px !important;
+    }
+
+    .sidebar-brand-title-row strong {
+        font-size: 17px;
+    }
+
+    .sidebar-brand-theme-button {
+        width: 29px !important;
+        height: 29px !important;
+        min-width: 29px;
+        flex-basis: 29px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .admin-sidebar {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        padding: 0 16px 16px;
+    }
+
+    .admin-page {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 20px !important;
+    }
+
+    .sidebar-logo {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .sidebar-nav {
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    .sidebar-footer {
+        padding-top: 14px;
+    }
+}
+/* =========================================================
+   ADMIN DARK THEME
+   Activated by: <body class="admin-body dark">
+   ========================================================= */
+
+body.admin-body {
+    background: #f5f6f8;
+    color: #111827;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+body.admin-body.dark {
+    background: #090909 !important;
+    color: #ffffff !important;
+}
+
+body.admin-body.dark .admin-layout {
+    background: #090909 !important;
+}
+
+body.admin-body.dark .admin-page {
+    background: #090909 !important;
+    color: #ffffff !important;
+}
+
+/* Headings */
+
+body.admin-body.dark .admin-page h1,
+body.admin-body.dark .admin-page h2,
+body.admin-body.dark .admin-page h3,
+body.admin-body.dark .admin-page h4,
+body.admin-body.dark .admin-page strong {
+    color: #ffffff !important;
+}
+
+/* Paragraphs and secondary text */
+
+body.admin-body.dark .admin-page p,
+body.admin-body.dark .admin-page small,
+body.admin-body.dark .admin-page label {
+    color: #a3a3a3;
+}
+
+/* Cards */
+
+body.admin-body.dark .stat-card,
+body.admin-body.dark .dashboard-card,
+body.admin-body.dark .admin-card,
+body.admin-body.dark .table-card,
+body.admin-body.dark .form-card,
+body.admin-body.dark .inventory-stat-card,
+body.admin-body.dark .inventory-content-card {
+    border-color: #303030 !important;
+    background: #171717 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+/* Page headers */
+
+body.admin-body.dark .page-header,
+body.admin-body.dark .admin-page-header,
+body.admin-body.dark .dashboard-header {
+    color: #ffffff;
+}
+
+body.admin-body.dark .page-header h1,
+body.admin-body.dark .admin-page-header h1,
+body.admin-body.dark .dashboard-header h1 {
+    color: #ffffff !important;
+}
+
+/* Tables */
+
+body.admin-body.dark table {
+    color: #ffffff;
+}
+
+body.admin-body.dark thead,
+body.admin-body.dark th {
+    border-color: #303030 !important;
+    background: #202020 !important;
+    color: #ffffff !important;
+}
+
+body.admin-body.dark td {
+    border-color: #303030 !important;
+    color: #d1d5db !important;
+}
+
+body.admin-body.dark tbody tr:hover {
+    background: #211b17 !important;
+}
+/* =========================================================
+   DARK THEME — FORMS AND FILTERS
+   ========================================================= */
+
+body.admin-body.dark input,
+body.admin-body.dark select,
+body.admin-body.dark textarea {
+    border-color: #3f3f46 !important;
+    background: #262626 !important;
+    color: #ffffff !important;
+}
+
+body.admin-body.dark input::placeholder,
+body.admin-body.dark textarea::placeholder {
+    color: #737373 !important;
+}
+
+body.admin-body.dark input:focus,
+body.admin-body.dark select:focus,
+body.admin-body.dark textarea:focus {
+    border-color: #ff6b00 !important;
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15) !important;
+}
+
+body.admin-body.dark option {
+    background: #262626;
+    color: #ffffff;
+}
+
+/* =========================================================
+   DARK THEME — TABLE CONTAINERS
+   ========================================================= */
+
+body.admin-body.dark .table-wrapper,
+body.admin-body.dark .inventory-table-wrapper,
+body.admin-body.dark .admin-table-wrapper {
+    background: #171717 !important;
+}
+
+body.admin-body.dark .admin-table {
+    background: #171717 !important;
+}
+
+body.admin-body.dark .admin-table tbody tr {
+    background: #171717;
+}
+
+body.admin-body.dark .admin-table tbody tr:nth-child(even) {
+    background: #1c1c1c;
+}
+
+body.admin-body.dark .admin-table tbody tr:hover {
+    background: #251b15 !important;
+}
+
+/* =========================================================
+   DARK THEME — FILTER SECTIONS
+   ========================================================= */
+
+body.admin-body.dark .filter-form,
+body.admin-body.dark .admin-filter-form,
+body.admin-body.dark .inventory-filter-form,
+body.admin-body.dark .search-filter-bar {
+    border-color: #303030 !important;
+    background: #202020 !important;
+}
+
+/* =========================================================
+   DARK THEME — BUTTONS
+   ========================================================= */
+
+body.admin-body.dark .btn-edit,
+body.admin-body.dark .btn-view,
+body.admin-body.dark .view-button,
+body.admin-body.dark .order-view-button,
+body.admin-body.dark .inventory-reset-button {
+    border-color: #4b5563 !important;
+    background: #262626 !important;
+    color: #e5e7eb !important;
+}
+
+body.admin-body.dark .btn-edit:hover,
+body.admin-body.dark .btn-view:hover,
+body.admin-body.dark .view-button:hover,
+body.admin-body.dark .order-view-button:hover,
+body.admin-body.dark .inventory-reset-button:hover {
+    border-color: #ff6b00 !important;
+    color: #ff6b00 !important;
+}
+
+body.admin-body.dark .admin-primary-button,
+body.admin-body.dark .save-btn,
+body.admin-body.dark .inventory-filter-button,
+body.admin-body.dark .inventory-stock-form button {
+    background: #ff6b00 !important;
+    color: #ffffff !important;
+}
+
+body.admin-body.dark .admin-primary-button:hover,
+body.admin-body.dark .save-btn:hover,
+body.admin-body.dark .inventory-filter-button:hover,
+body.admin-body.dark .inventory-stock-form button:hover {
+    background: #e85f00 !important;
+}
+
+/* =========================================================
+   DARK THEME — ALERTS
+   ========================================================= */
+
+body.admin-body.dark .admin-alert-success {
+    border-color: rgba(34, 197, 94, 0.35) !important;
+    background: rgba(34, 197, 94, 0.12) !important;
+    color: #86efac !important;
+}
+
+body.admin-body.dark .admin-alert-error {
+    border-color: rgba(239, 68, 68, 0.35) !important;
+    background: rgba(239, 68, 68, 0.12) !important;
+    color: #fca5a5 !important;
+}
+
+/* =========================================================
+   DARK THEME — INVENTORY
+   ========================================================= */
+
+body.admin-body.dark .inventory-page {
+    background: #090909 !important;
+}
+
+body.admin-body.dark .inventory-content-header {
+    border-color: #303030 !important;
+}
+
+body.admin-body.dark .inventory-result-count {
+    background: rgba(255, 107, 0, 0.14) !important;
+    color: #ff8a33 !important;
+}
+
+body.admin-body.dark .inventory-category-name {
+    color: #e5e7eb !important;
+}
+
+body.admin-body.dark .inventory-product-cell img,
+body.admin-body.dark .inventory-product-placeholder {
+    border-color: #3f3f46 !important;
+    background: #262626 !important;
+}
+
+body.admin-body.dark .inventory-stock-good,
+body.admin-body.dark .inventory-status-active {
+    background: rgba(34, 197, 94, 0.14) !important;
+    color: #86efac !important;
+}
+
+body.admin-body.dark .inventory-stock-low {
+    background: rgba(245, 158, 11, 0.14) !important;
+    color: #fcd34d !important;
+}
+
+body.admin-body.dark .inventory-stock-out,
+body.admin-body.dark .inventory-status-out-of-stock {
+    background: rgba(239, 68, 68, 0.14) !important;
+    color: #fca5a5 !important;
+}
+
+body.admin-body.dark .inventory-status-inactive {
+    background: #303030 !important;
+    color: #d1d5db !important;
+}
+
+/* =========================================================
+   DARK THEME — SCROLLBARS
+   ========================================================= */
+
+body.admin-body.dark ::-webkit-scrollbar-track {
+    background: #171717;
+}
+
+body.admin-body.dark ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: #4b5563;
+}
+
+body.admin-body.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+/* =========================================================
+   ORDERS PAGE DARK MODE VISIBILITY FIX
+   ========================================================= */
+
+body.admin-body.dark .orders-page {
+    background: #090909 !important;
+    color: #ffffff !important;
+}
+
+body.admin-body.dark .orders-page .table-card,
+body.admin-body.dark .orders-page .orders-table-wrapper,
+body.admin-body.dark .orders-page .admin-table-wrapper {
+    border-color: #303030 !important;
+    background: #171717 !important;
+}
+
+/* Table header */
+
+body.admin-body.dark .orders-page table thead,
+body.admin-body.dark .orders-page table thead tr,
+body.admin-body.dark .orders-page table th {
+    border-color: #353535 !important;
+    background: #202020 !important;
+    color: #f3f4f6 !important;
+}
+
+/* Force every order row to use dark background */
+
+body.admin-body.dark .orders-page table tbody,
+body.admin-body.dark .orders-page table tbody tr,
+body.admin-body.dark .orders-page table tbody tr:nth-child(odd),
+body.admin-body.dark .orders-page table tbody tr:nth-child(even) {
+    background: #171717 !important;
+}
+
+/* Order row hover */
+
+body.admin-body.dark .orders-page table tbody tr:hover {
+    background: #251b15 !important;
+}
+
+/* Table cells */
+
+body.admin-body.dark .orders-page table td {
+    border-color: #353535 !important;
+    background: transparent !important;
+    color: #d1d5db !important;
+}
+
+/* Order number and customer name */
+
+body.admin-body.dark .orders-page table td strong,
+body.admin-body.dark .orders-page table td a:not(.order-action-button):not(.order-view-button) {
+    color: #ffffff !important;
+}
+
+/* Secondary information */
+
+body.admin-body.dark .orders-page table td small,
+body.admin-body.dark .orders-page table td span {
+    color: #a3a3a3;
+}
+
+/* Price */
+
+body.admin-body.dark .orders-page .order-total,
+body.admin-body.dark .orders-page .order-price,
+body.admin-body.dark .orders-page .order-amount {
+    color: #ffffff !important;
+    font-weight: 800;
+}
+
+/* Payment method */
+
+body.admin-body.dark .orders-page .payment-method {
+    color: #d1d5db !important;
+}
+
+/* Search and filter section */
+
+body.admin-body.dark .orders-page .orders-filter-form,
+body.admin-body.dark .orders-page .admin-filter-form {
+    border-color: #303030 !important;
+    background: #202020 !important;
+}
+
+/* Inputs */
+
+body.admin-body.dark .orders-page input,
+body.admin-body.dark .orders-page select {
+    border-color: #454545 !important;
+    background: #262626 !important;
+    color: #ffffff !important;
+}
+
+/* View Details button */
+
+body.admin-body.dark .orders-page .order-view-button {
+    border-color: #ff6b00 !important;
+    background: transparent !important;
+    color: #ff8a33 !important;
+}
+
+body.admin-body.dark .orders-page .order-view-button:hover {
+    background: #ff6b00 !important;
+    color: #ffffff !important;
+}

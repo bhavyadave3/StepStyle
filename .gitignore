@@ -1,0 +1,27 @@
+# Environment and secret files
+.env
+.env.*
+!.env.example
+
+# Private database backup
+/database/stepstyle.sql
+
+# User-uploaded files
+/assets/uploads/*
+!/assets/uploads/.gitkeep
+
+# Dependencies
+/vendor/
+/node_modules/
+
+# Editor files
+.vscode/
+.idea/
+
+# System files
+Thumbs.db
+.DS_Store
+
+# Logs and temporary files
+*.log
+*.tmp

@@ -1,0 +1,13 @@
+Options -Indexes
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+ErrorDocument 404 /StepStyle/404.php
+
+<FilesMatch "\.(env|ini|log|sql)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
