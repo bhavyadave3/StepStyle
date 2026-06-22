@@ -1,10 +1,10 @@
-## StepStyle
+# StepStyle
 
 StepStyle is a complete and responsive shoes e-commerce platform designed for customers to browse, search, purchase, and manage footwear products online. 
 It also provides an admin panel for managing products, inventory, customers, orders, categories, brands, and discount coupons.
 The project is built using PHP, MySQL, HTML, CSS, JavaScript, AJAX, PDO, and an MVC-style architecture.
 
-# Main Features
+## Main Features
 
 Customer Features
 
@@ -40,7 +40,7 @@ Admin Features
 * Create and manage discount coupons
 * Use dark and light admin themes
 
-# Key Characteristics
+## Key Characteristics
 
 * Modern and user-friendly interface
 * Fully responsive design
@@ -56,7 +56,7 @@ Admin Features
 * Transaction-based order processing
 * Dark and light mode support
 
-# Project Purpose
+## Project Purpose
 
 StepStyle is suitable for:
 
@@ -67,13 +67,13 @@ StepStyle is suitable for:
 * Demonstrating full-stack development skills
 * E-commerce portfolio and academic projects
 
-# Technologies Used
+## Technologies Used
 
 Frontend: HTML5, CSS3, Vanilla JavaScript, AJAX, Font Awesome
 Backend: PHP 8+, PDO
 Database: MySQL / MariaDB
 Development Tools: XAMPP, phpMyAdmin, Visual Studio Code, Git, GitHub
 
-# Security
+## Security
 
 StepStyle includes prepared SQL statements, password hashing, session-based authentication, CSRF protection, role-based authorization, input validation, output escaping, secure file handling, and database transactions.
